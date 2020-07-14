@@ -1,0 +1,55 @@
+<div class="fixed-top">
+  <nav class="navbar navbar-light bg-faded">
+    <!-- modificar o topo ^ em cima -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4" >
+          <a class="navbar-brand" routerLink="">
+            <img src="/assets/logo.png" />
+          </a>
+        </div>
+
+         <!--(input) ou (keyup)-->
+         <!-- criar Approach = criação de uma varivel de referencia.  #variavelPesquisa   -->
+        <div class="col-md-6" >
+          <input type="text"
+            class="form-control" 
+            placeholder="Pesquisar"
+            #variavelPesquisa
+            (input)="pesquisar(variavelPesquisa.value)"
+          />
+          <!-- passando paramentros no pipe -->
+          <ul class="list-group" style="position: absolute;">
+            <!-- pipe async faz um subcribe seja Observable ou promise -->
+            <li class="list-group-item" *ngFor="let offer2 of oferta | async" >
+              <a  [routerLink]="['/oferta', offer2.id]" (click)="limpar()" >
+                {{offer2.titulo | descricaoReduzida : 15: 0}}
+              </a>    
+            </li>
+          </ul>
+
+        </div>
+        <div class="col-md-2" >
+          <a a href="#"><img src="/assets/carrinho.png" /></a>
+        </div>
+      </div>   
+    </div>
+  </nav>
+
+  <div class="menu">
+    <div class="container">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/restaurantes">Restaurantes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/diversao">Diversão</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="banner">
+  <img src="/assets/banners/img_1.jpg" />
+</div>
