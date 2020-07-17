@@ -7,7 +7,10 @@ import localePt from '@angular/common/locales/pt';
 registerLocaleData(localePt, 'pt-BR');
 
 // injetando Form
-import {FormsModule} from '@angular/forms'
+//import {FormsModule} from '@angular/forms'
+
+// injetando ReactiveFormsModule
+import {ReactiveFormsModule} from '@angular/forms'
 
 
 // injetar o http
@@ -53,7 +56,8 @@ import { OrdemCompraSucessoComponent } from './ordem-compra-sucesso/ordem-compra
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule,
+    //FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(ROUTES),
 
   ],
